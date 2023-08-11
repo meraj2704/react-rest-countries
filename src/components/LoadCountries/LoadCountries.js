@@ -16,7 +16,9 @@ const LoadCountries = () => {
             <h4>Country Length : {countries.length}</h4>
 
             {
-                countries.map(country => <Country name={country.name.common} capital={country.capital} population={country.population} region={country.region} area={country.area} flag={country.flags.png}></Country>)
+                countries.map(country => <Country
+                    country={country}
+                ></Country>)
             }
         </div>
     );
