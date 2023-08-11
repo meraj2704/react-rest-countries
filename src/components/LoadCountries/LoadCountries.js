@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import Country from './Country/Country';
+import './LoadCountries.css'
 
 const LoadCountries = () => {
     const [countries, setCountries] = useState([]);
@@ -11,15 +12,17 @@ const LoadCountries = () => {
     }, [])
     console.log(countries)
     return (
-        <div>
+        <div >
             <h1>Visiting Every country of the world!!</h1>
             <h4>Country Length : {countries.length}</h4>
-
+            <div className='load-countries'>
             {
                 countries.map(country => <Country
                     country={country}
+                    key={country.cca3}
                 ></Country>)
             }
+            </div>
         </div>
     );
 };
